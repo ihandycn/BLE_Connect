@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="line">#F16530</color>
+    <color name="hot">#FF5657</color>
+    <color name="hot1">#FF002A</color>
+    <color name="hot2">#FF0012</color>
+    <color name="gray">#D5D3D4</color>
+    <color name="gray1">#A0A0A0</color>
+    <color name="gray2">#3F3F3F</color>
+    <color name="gray3">#2B2B2B</color>
+    <color name="black">#000000</color>
+    <color name="green">#8FCBC4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0893D8</color>
+    <color name="orange">#FE7502</color>
+
+</resources>
