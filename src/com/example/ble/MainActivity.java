@@ -126,7 +126,10 @@ public class MainActivity extends Activity {
 							int highNum = Integer.parseInt(String.format("%02X",scanRecord[9]) + "00", 16);
 							int lowNum = Integer.parseInt(String.format("%02X",scanRecord[10]) + "", 16);
 							float temperature = (highNum + lowNum) / 10;
+							int part1 = (highNum + lowNum) / 10; // ex. 37.2度, part1 is 37, part2 is 2
+							int part2 = (highNum + lowNum) % 100;
 							Log.e(TAG, "onLeScan(), temperature:" + temperature);
+							Log.e(TAG, "onLeScan(), temperature part1:" + part1 + ", part2:" + part2);
 							Toast.makeText(MainActivity.this, "" + temperature + "摄氏度", 500).show();
 							
 							// 0-电压正常；1-电压低
