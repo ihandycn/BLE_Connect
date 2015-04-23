@@ -130,8 +130,17 @@ public class MainActivity extends Activity {
 							int part2 = (highNum + lowNum) % 100;
 							Log.e(TAG, "onLeScan(), temperature:" + temperature);
 							Log.e(TAG, "onLeScan(), temperature part1:" + part1 + ", part2:" + part2);
-							Toast.makeText(MainActivity.this, "" + temperature + "摄氏度", 500).show();
-							
+							// Toast.makeText(MainActivity.this, "" + temperature + "摄氏度", 500).show();
+							Intent intent = new Intent(MainActivity.this,
+									ShowActivity.class);
+							intent.putExtra("part1", part1);
+							intent.putExtra("part2", part2);
+							if (part1 >= 37) {
+								intent.putExtra("isNormal", true);
+							} else {
+								intent.putExtra("isNormal", false);
+							}
+							startActivity(intent);
 							// 0-电压正常；1-电压低
 							int battery = Integer.parseInt(scanRecord[10] + "", 16) >> 7;
 							Log.e(TAG, "onLeScan(), battery status:" + battery);
