@@ -12,6 +12,7 @@ import android.bluetooth.BluetoothAdapter.LeScanCallback;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -132,7 +133,7 @@ public class MainActivity extends Activity {
 							Log.e(TAG, "onLeScan(), temperature part1:" + part1 + ", part2:" + part2);
 							// Toast.makeText(MainActivity.this, "" + temperature + "摄氏度", 500).show();
 							Intent intent = new Intent(MainActivity.this,
-									ShowActivity.class);
+									ShowMoreActivity.class);
 							intent.putExtra("part1", part1);
 							intent.putExtra("part2", part2);
 							if (part1 >= 37) {
