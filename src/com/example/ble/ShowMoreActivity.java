@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -34,12 +35,12 @@ public class ShowMoreActivity extends Activity {
 		part2.setText(string2);
 		if (b) {
 			relativeLayout.setBackground(getResources().getDrawable(
-					R.drawable.normalbg));
-			isNormal.setText("正常");
-		} else {
-			relativeLayout.setBackground(getResources().getDrawable(
 					R.drawable.hotbg));
 			isNormal.setText("发烧了");
+		} else {
+			relativeLayout.setBackground(getResources().getDrawable(
+					R.drawable.normalbg));
+			isNormal.setText("正常");
 		}
 	}
 
@@ -60,5 +61,11 @@ public class ShowMoreActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		finish();
+		return super.onTouchEvent(event);
 	}
 }
